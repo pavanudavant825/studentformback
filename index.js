@@ -56,10 +56,11 @@ app.delete("/delete/:id",async(req,res)=>{
 )
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/studentdata")
+mongoose.connect("mongodb+srv://pavanudavant:Pavan8401@cluster0.0r4sc9z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 .then(()=>{
     console.log("connected to DB")
-    app.listen(8000,()=>console.log("server is running"))
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT,()=>console.log("server is running"))
 }
 )
 .catch((err)=>console.log(err))
